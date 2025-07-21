@@ -23,9 +23,14 @@ body, html{
     --card-bg: hsl(0, 0%, 12%);
     --card-bg-alt: hsl(0, 0%, 18%);
     --footer-bg: hsl(0, 0%, 8%);
+    --logo-color: hsla(0, 0%, 0%, 0.8);
 }
-.head{
-    position: fixed;
+.logo{
+  transform: scale(0.05);
+  
+  position: absolute;
+  left: -510px;
+
 }
 .head{
     top: 0;
@@ -34,9 +39,11 @@ body, html{
     height: 70px;
     background-color: var(--primary-color);    
     display: flex;
+    position: fixed;
     justify-content: space-between;
     align-items: center;
     padding-right: clamp(10px, 20vw, 50px);
+    padding-left: clamp(10px, 20vw, 100px);
     z-index: 10;
 }
 
@@ -144,8 +151,9 @@ input:focus{
     justify-content: center;
     width: inherit;
     height: 110vh;
+    position: relative;
     /* height: clamp(100vh,100%, 1459px); */
-    top: 0;
+    top: 70px;
     z-index: 2;
 }
 .main-img{
@@ -153,7 +161,7 @@ input:focus{
     position: absolute;
     top: 0; left: 50%;
     transform: translateX(-50%);
-    width: 100vw;
+    width:100%;
     z-index: 0;
   }
 
@@ -248,7 +256,7 @@ input:focus{
 /* --- Extended Styles for New Sections: Dark Mode --- */
 
 .hero {
-  width: 100vw;
+  width:100%;
   min-height: 60vh;
   background: linear-gradient(45deg, var(--background-color) 0%, var(--secondary-color) 100%);
   display: flex;
@@ -293,7 +301,7 @@ input:focus{
 }
 
 .categories {
-  width: 100vw;
+  width:100%;
   background: var(--background-color);
   padding: 3rem 0 2rem 0;
   text-align: center;
@@ -485,7 +493,7 @@ input:focus{
 /* Fullscreen Image Section */
 .fullscreen-image-section {
   position: relative;
-  width: 100vw;
+  width:100%;
   min-height: 80vh;
   margin: 0;
   padding: 0;
@@ -495,7 +503,7 @@ input:focus{
   justify-content: center;
 }
 .fullscreen-img {
-  width: 100vw;
+  width:100%;
   height: inherit;
   object-fit: cover;
   display: block;
@@ -503,8 +511,8 @@ input:focus{
 }
 .fullscreen-caption {
   position: absolute;
-  width: 100vw;
-  top: 35%;
+  width:100%;
+  top: 15%;
   left: 50%;
   transform: translate(-50%, -50%);
   color: #fff;
@@ -513,7 +521,7 @@ input:focus{
   padding: 2rem 2.5rem;
   border-radius: 1rem;
   /* box-shadow: 0 4px 24px #0008; */
-  background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.305) 50%, rgba(255, 255, 255, 0) 100%);
+  /* background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, 0.305) 50%, rgba(255, 255, 255, 0) 100%); */
 
 }
 .fullscreen-caption h2 {
@@ -524,18 +532,36 @@ input:focus{
   /* box-shadow: inset 0 0 100px rgb(0, 0, 0); */
 
 }
-.fullscreen-caption p {
-  font-size: 1.5rem;
-  margin: 0 0 1.5rem 0;
-  text-shadow: #000 10px 10px 6px;
+.read-more{
+  position: absolute;
+  bottom: 8%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
+.read-more p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 1.5rem 0;
+  color: var(--text-color);
+  /* text-shadow: #000000 3px 3px 3px; */
+  /* text-shadow:
+    -1px -1px 1 #000,  
+     1px -1px 1 #000,
+    -1px  1px 1 #000,
+     1px  1px 1 #000; */
+}
+
 .read-more-btn {
   background: var(--primary-color);
   color: var(--background-color);
   border: none;
   border-radius: 8px;
-  padding: 0.9rem 2.2rem;
-  font-size: 1.1rem;
+  padding: 0.5rem 1.1rem;
+  max-width: 150px;
+  font-size: 1rem;
   font-weight: bold;
   cursor: pointer;
   transition: background 0.2s, color 0.2s, transform 0.15s;

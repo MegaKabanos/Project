@@ -5,9 +5,9 @@ let ticking = false;
 
 function handleScroll() {
   const currentScrollY = window.scrollY;
-  if (currentScrollY > lastScrollY && currentScrollY > 50) {
+  if (currentScrollY > lastScrollY && currentScrollY > 70) {
     // Scrolling down
-    header.style.transform = 'translateY(-100%)';
+    header.style.transform = 'translateY(-95%)';
     header.style.transition = 'transform 0.3s';
   } else {
     // Scrolling up
@@ -24,3 +24,5 @@ window.addEventListener('scroll', function() {
     ticking = true;
   }
 });
+
+

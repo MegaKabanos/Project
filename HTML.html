@@ -4,8 +4,8 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 </style>
-    <link rel="stylesheet" href="big one.css" />
-    <script defer src="big one.js"></script>
+    <link rel="stylesheet" href="CSS.css" />
+    <script defer src="JS.js"></script>
     <meta charset="UTF-8" />
     <title>Website</title>
         <style>
@@ -21,11 +21,6 @@
 </head>
 <body>
   <div class="head">
-          <div class="logo"><svg width="1123" height="972" viewBox="0 0 1123 972" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M1122.11 971.775H0L77.1494 838.149H866.257L471.702 154.762L561.055 0L1122.11 971.775Z" fill="var(--logo-color)"/>
-<path d="M759.614 777.2C760.768 779.2 759.325 781.7 757.015 781.7H130.88C128.57 781.7 127.127 779.2 128.281 777.2L441.349 234.95C442.504 232.95 445.39 232.95 446.545 234.95L759.614 777.2Z" fill="var(--logo-color)"/>
-</svg>
-</div>
           <div class="button-container">
               <svg 
                   id="top-left" 
@@ -131,10 +126,46 @@
                       mask="url(#path-1-outside-1_201_35)"
                   />
               </svg>
-              <button>Home</button>
-              <button>Info</button>
-              <button>Price</button>
+              <div class="button-dropdown">
+                <button>Shop</button>
+                <div class="dropdown-menu">
+                  <a href="#" class="first-dropdown">Alpine Skis</a>
+                  <a href="#">Snowboards</a>
+                  <a href="#">Boots</a>
+                  <a href="#">Goggles</a>
+                  <a href="#" class="last-dropdown">Helmets</a>
+                </div>
+              </div>
+              <div class="button-dropdown">
+                <button>Brands</button>
+                <div class="dropdown-menu">
+                  <a href="#" class="first-dropdown">Atomic</a>
+                  <a href="#">Salomon</a>
+                  <a href="#">Rossignol</a>
+                  <a href="#">Burton</a>
+                  <a href="#" class="last-dropdown">Smith Optics</a>
+                </div>
+              </div>
+              <div class="button-dropdown">
+                <button>Events</button>
+                <div class="dropdown-menu">
+                  <a href="#" class="first-dropdown">Upcoming Races</a>
+                  <a href="#">Demo Days</a>
+                  <a href="#">Workshops</a>
+                  <a href="#" class="last-dropdown">Community Meetups</a>
+                </div>
+              </div>
+              <div class="button-dropdown">
+                <button>Contact</button>
+                <div class="dropdown-menu">
+                  <a href="#" class="first-dropdown">Email Us</a>
+                  <a href="#">Call Support</a>
+                  <a href="#">Store Locations</a>
+                  <a href="#" class="last-dropdown">FAQ</a>
+                </div>
+              </div>
           </div>
+
           <div class="search-container">
               <input type="text" placeholder="Search..." />
               <button class="search-button" >
@@ -149,19 +180,25 @@
       </svg>
 
               </button>
-
           </div>
+
+          <a href="#" class="logo"><svg width="1123" height="972" viewBox="0 0 1123 972" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M1122.11 971.775H0L77.1494 838.149H866.257L471.702 154.762L561.055 0L1122.11 971.775Z" fill="var(--logo-color)"/>
+<path d="M759.614 777.2C760.768 779.2 759.325 781.7 757.015 781.7H130.88C128.57 781.7 127.127 779.2 128.281 777.2L441.349 234.95C442.504 232.95 445.39 232.95 446.545 234.95L759.614 777.2Z" fill="var(--logo-color)"/>
+          </svg></a>
+
+
     </div>
   <div class="body">
     <div class="background">
-      <img id="main-img" class="main-img" src="/BIg one/shi/bwskione169.jpg" alt="Image">
+      <img id="main-img" class="main-img" src="/BIg one/pics/bwskione169.jpg" alt="Image">
       <div class=text-field><h1>No absolution for obsoletion</h1></div>
     </div>
     <div class="category-container">
-        <div class="category"><button>more</button><img src="/BIg one/shi/754799082960519.jpg" alt=""><div class="category-inside">Alpine</div></div>
-        <div class="category"><button>more</button><img src="/BIg one/shi/Buy-the-Best-Ski-Boots-for-Skiers-All-You-Need-to-Know-1536x1024.jpg" alt=""><div class="category-inside">cross-country</div></div>
-        <div class="category"><button>more</button><img src="/BIg one/shi/squad-mag-goggles_alpineGreen-cpEverydayRoseGoldMirror_ls01.jpg" alt=""><div class="category-inside">Headgear</div></div>
-        <div class="category"><button>more</button><img src="/BIg one/shi/1650919232_35-vsegda-pomnim-com-p-snoubordisti-v-gorakh-foto-41.jpg" alt=""><div class="category-inside">Snowboard</div></div>
+        <div class="category"><button>more</button><img src="/BIg one/pics/754799082960519.jpg" alt=""><div class="category-inside">Alpine</div></div>
+        <div class="category"><button>more</button><img src="/BIg one/pics/Buy-the-Best-Ski-Boots-for-Skiers-All-You-Need-to-Know-1536x1024.jpg" alt=""><div class="category-inside">cross-country</div></div>
+        <div class="category"><button>more</button><img src="/BIg one/pics/squad-mag-goggles_alpineGreen-cpEverydayRoseGoldMirror_ls01.jpg" alt=""><div class="category-inside">Headgear</div></div>
+        <div class="category"><button>more</button><img src="/BIg one/pics/1650919232_35-vsegda-pomnim-com-p-snoubordisti-v-gorakh-foto-41.jpg" alt=""><div class="category-inside">Snowboard</div></div>
     </div>
 
   <!-- Hero Section -->
@@ -178,19 +215,19 @@
     <h2>SHOP BY CATEGORY</h2>
     <div class="category-grid">
       <div class="category-card">
-        <img src="shi/squad-mag-goggles_alpineGreen-cpEverydayRoseGoldMirror_ls01.jpg" alt="Alpine Skiing">
+        <img src="pics/Wildkogel_Guides_2024_WEB2_Header-9.jpg" alt="Alpine Skiing">
         <h3>Alpine Skiing</h3>
         <p>Professional grade alpine ski equipment</p>
         <a href="#" class="category-link">View Collection →</a>
       </div>
       <div class="category-card">
-        <img src="shi/thomas-dils-ZEraBEoSRSw-unsplash-2-scaled.jpg" alt="Cross-Country">
+        <img src="pics/thomas-dils-ZEraBEoSRSw-unsplash-2-scaled.jpg" alt="Cross-Country">
         <h3>Cross-Country</h3>
         <p>High-performance cross-country gear</p>
         <a href="#" class="category-link">View Collection →</a>
       </div>
       <div class="category-card">
-        <img src="shi/754799082960519.jpg" alt="Snowboarding">
+        <img class="problem" src="pics/bardbwwarmjpg2.jpg" alt="Snowboarding">
         <h3>Snowboarding</h3>
         <p>Latest snowboarding equipment</p>
         <a href="#" class="category-link">View Collection →</a>
@@ -203,19 +240,19 @@
     <h2>FEATURED GEAR</h2>
     <div class="product-grid">
       <div class="product-card">
-        <img src="shi/Buy-the-Best-Ski-Boots-for-Skiers-All-You-Need-to-Know-1536x1024.jpg" alt="Pro Alpine Boots">
-        <h3>Pro Alpine Boots 2025</h3>
+        <img src="pics/boots-1536x1024.jpg" alt="Pro Alpine Boots">
+        <h3> Atomic Alpine Boots 2025</h3>
         <p class="price">$599.99</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="shi/squad-xl-goggles_black-cpEverydayRedMirror_ls01.webp" alt="Premium Goggles">
-        <h3>Elite Snow Goggles</h3>
+        <img src="pics/matteAlpineGreenSlate_ls01.jpg" alt="Premium Goggles">
+        <h3>Smith Snow Goggles</h3>
         <p class="price">$199.99</p>
         <button class="add-to-cart">Add to Cart</button>
       </div>
       <div class="product-card">
-        <img src="shi/matteAlpineGreenSlate_ls01.webp" alt="Snow Helmet">
+        <img src="pics/hlemet.jpg" alt="Snow Helmet">
         <h3>Protection Pro Helmet</h3>
         <p class="price">$249.99</p>
         <button class="add-to-cart">Add to Cart</button>
@@ -248,7 +285,7 @@
 
   <!-- Fullscreen Image Section -->
   <section class="fullscreen-image-section">
-    <img src="shi/header-0-movement-0b564-1.jpg" alt="Skiing in the mountains" class="fullscreen-img">
+    <img src="pics/header-0-movement-0b564-1.jpg" alt="Skiing in the mountains" class="fullscreen-img">
     <div class="fullscreen-caption">
       <h2>Adventure Awaits</h2>
     </div>

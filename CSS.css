@@ -1,3 +1,86 @@
+button, .button, .cta-button, .add-to-cart, .read-more-btn {
+  user-select: none;
+}
+/* --- Mobile Burger Menu Styles --- */
+.mobile-menu {
+  display: none;
+}
+.mobile-menu.open {
+  display: block;
+}
+.mobile-menu {
+  /* display: none; already set above */
+  position: relative;
+  top: 70px;
+  left: 0;
+  width: 10rem;
+  background: var(--card-bg);
+  z-index: 9;
+  box-shadow: 0 4px 24px #0008;
+  padding: 1.5rem 0 2rem 0;
+  max-height: 70vh;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  position: fixed;
+}
+.mobile-menu::before,
+.mobile-menu::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  pointer-events: none;
+  z-index: 10;
+}
+/* .mobile-menu::before {
+  top: 0;
+  background: linear-gradient(to bottom, var(--card-bg), transparent);
+}
+.mobile-menu::after {
+  bottom: -6000px;
+  background: linear-gradient(to top, var(--card-bg), transparent);
+} */
+.mobile-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0 1.5rem;
+  min-width: 174px;
+}
+.mobile-menu > ul > li {
+  margin-bottom: 1.2rem;
+}
+.mobile-menu > ul > li > span {
+  font-size: 1.3rem;
+  color: var(--primary-color);
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.mobile-menu ul ul {
+  margin-left: 0rem;
+  margin-bottom: 0.5rem;
+}
+.mobile-menu ul ul li {
+  font-size: 1.1rem;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+.mobile-menu ul ul li:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 768px) {
+  .mobile-menu {
+    /* display: block; now controlled by JS */
+  }
+  .button-container {
+    display: none;
+  }
+}
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
 
 body, html{
     width: 100%;
@@ -15,7 +98,7 @@ body, html{
 
 
 :root{
-    --primary-color:hsl(75, 99%, 52%);
+    --primary-color:hsl(75, 99%, 42%);
     --secondary-color: hsl(75, 91%, 35%);
     --text-color: hsl(0, 0%, 100%);
     --background-color: hsl(0, 0%, 5%);
@@ -26,11 +109,16 @@ body, html{
     --logo-color: hsla(0, 0%, 0%, 0.8);
 }
 .logo{
-  transform: scale(0.05);
-  
+  transform: scale(0.04);
   position: absolute;
-  left: -510px;
-
+  right: -500px;
+}
+.burger-menu{
+    display: none;
+    position: absolute;
+    top: 17px;
+    left: 10px;
+    cursor: pointer;
 }
 .head{
     top: 0;
@@ -42,8 +130,8 @@ body, html{
     position: fixed;
     justify-content: space-between;
     align-items: center;
-    padding-right: clamp(10px, 20vw, 50px);
-    padding-left: clamp(10px, 20vw, 100px);
+    /* padding-right: clamp(10px, 20vw, 120px); */
+    /* padding-left: clamp(10px, 20vw, 100px); */
     z-index: 10;
 }
 
@@ -62,7 +150,7 @@ body, html{
 
 .button-container button:hover{
     background-color: rgb(65, 87, 0);
-    color: white;
+    color: var(--text-color);
 }
 
 .button-container button:active{
@@ -77,11 +165,63 @@ body, html{
     justify-content: space-around;
     align-items: center;
     height: inherit;
-    width: 60vw;    
+    /* margin-right: 5rem; */
+    padding: 0 1.5rem;
+    max-width: 40vw;
+    gap: 2px;
+    
+}
+
+/* Dropdown menu for header */
+.button-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 150px;
+  background: var(--card-bg);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+  z-index: 100;
+  border-radius: 8px;
+  border: none;
+  padding: 0rem 0;
+}
+
+.dropdown-menu a {
+  color: var(--text-color);
+  padding: 0.7rem 1.2rem;
+  text-decoration: none;
+  display: block;
+  transition: background 0.2s;
+  border: none;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+}
+
+.first-dropdown{
+  border-radius: 8px 8px 0 0;
+}
+.last-dropdown{
+  border-radius: 0 0 8px 8px;
+}
+
+.dropdown-menu a:hover {
+  background: var(--primary-color);
+  color: var(--background-color);
+}
+
+.button-dropdown:hover .dropdown-menu {
+  display: block;
 }
 
 .button-container svg{
     position: absolute;
+
     scale: 0.5;
 }   
 #top-left{
@@ -89,7 +229,7 @@ body, html{
     top: 0;
 }
 #top-right{
-    right: 0px;
+    right: 0;
     top: 0;
     transform: rotate(90deg);
 }
@@ -99,15 +239,17 @@ body, html{
     transform: rotate(-90deg);
 }
 #bottom-right{
-    right: 0px;
+    right: 0;
     bottom: 0;
     transform: rotate(180deg);
 }
 
 .search-container{
     display: flex;
-    justify-content: space-around;
+    justify-content: start;
     align-items: center;
+    margin-right: 100px;
+    width: clamp(175px, 20vw, 250px);
 }
 
 .search-container input{
@@ -117,11 +259,11 @@ body, html{
     border: black solid 2px;
     padding-left: 10px;
     background-color: rgb(65, 87, 0);
-    color: white;
+    color: var(--text-color);
 }
 
 input::placeholder{
-    color: white;
+    color: var(--text-color);
     opacity: 0.7;
 }
 
@@ -131,7 +273,7 @@ input:focus{
 
 .search-container button{
     width: 34px;
-    height: 35.5px;
+    height: 36px;
     background-color: transparent;
     border: black solid 2px;
     border-left-color: transparent;
@@ -142,17 +284,17 @@ input:focus{
 
 .search-container button svg{
     transform: scale(3.5);
+    padding: 0 8px 0 7px;
 }
-
-
 .background{
-
     display: flex;
     justify-content: center;
-    width: inherit;
-    height: 110vh;
+    align-items: start;
+    width: 100%;
+    /* height: 110vh; */
     position: relative;
-    /* height: clamp(100vh,100%, 1459px); */
+    height: clamp(200px, 110vh, 1459px);
+    /* margin-bottom: 300px; */
     top: 70px;
     z-index: 2;
 }
@@ -167,40 +309,58 @@ input:focus{
 
 .text-field{
     /* margin-top: clamp(50px, 205px, 370px); */
-    margin-top: 140px;
+    /* margin-top: 140px; */
     display: flex;
     position: relative;
     justify-content: center;
     align-items: center;
-    font-size: 30px;
+    font-size: 1.5rem;
+    /* transform: rotate(90deg); */
     height: 15vh;
-    width: 65vw;
+    width: 40vw;
     padding: 30px;
     box-sizing: border-box;
     color: rgb(0, 0, 0);
-    background-color: rgba(193, 254, 12, 0.574);
+    /* background-color: rgba(193, 254, 12, 0.574); */
+    background-color: hsla(75, 99%, 42%, 0.8);
     box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     z-index: 1;
 }
+.text-block{
+    position: relative;
+    white-space: nowrap;
+    /* left: -150px;
+    top: 300px; */
+    background-color: var(--card-bg);
+    color: var(--primary-color);
+    font-weight: bold;
+    font-size: 3rem;
+    /* transform: rotate(90deg); */
+    max-width: 100%;
+    height: auto;
+    padding: 4px;
+    /* margin: 380px 0 0 400px; */
+    margin-top: 120px;
+    z-index: 3;
+}
 .category-container{
     display: grid;
-    grid-template-columns: 650px 650px;
+    grid-template-columns: 600px 600px;
     align-items: center;
     justify-content: center;
     justify-items: center;
-    font-size: 20px;
+    /* font-size: 20px; */
     width: 90vw;
     gap: 40px;
     margin: 100px auto 0 auto;
 }
 
 .category img{
-    width: 100%;
-    height: 450px;
-    width: 650px;
+    height: 400px;
+    width: 600px;
     object-fit: cover;
     border-radius: 10px;
     z-index: 1;
@@ -246,7 +406,7 @@ input:focus{
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4rem;
+    font-size: clamp(2rem, 6vw, 4rem);
     color: rgb(255, 255, 255);
     font-weight: bold;
     text-shadow: 10px 10px 10px rgb(0, 0, 0);
@@ -458,7 +618,7 @@ input:focus{
   background: var(--card-bg);
   border-radius: 2rem;
   box-shadow: 0 4px 32px 0 rgba(0,0,0,0.22);
-  width: 340px;
+  width: clamp(250px, 30vw, 340px);
   min-height: 60px;
   padding: 2.5rem 2rem 2.5rem 2rem;
   display: flex;
@@ -499,6 +659,7 @@ input:focus{
   padding: 0;
   overflow: hidden;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -525,7 +686,8 @@ input:focus{
 
 }
 .fullscreen-caption h2 {
-  font-size: 7rem;
+  font-size: clamp(2rem, 9vw, 7rem);
+  /* font-size: 7rem; */
   text-shadow: #000 10px 10px 10px;
   margin-bottom: 1rem;
   letter-spacing: 2px;
@@ -542,7 +704,7 @@ input:focus{
   align-items: center;
 }
 .read-more p {
-  font-size: 1.5rem;
+  font-size: clamp(1rem, 2vw, 1.5rem);
   font-weight: 500;
   margin: 0 0 1.5rem 0;
   color: var(--text-color);
@@ -674,14 +836,111 @@ footer {
   color: var(--primary-color);
 }
 
+@media (max-width: 768px) {
+  .background {
+    /* height: auto; */
+    /* min-height: 40vh; */
+    width: 100vw;
+    top: 70px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+  }
 
-@media (max-width: 900px) {
-  .category-grid, .product-grid, .benefits-grid, .footer-content {
+    .head {
+      justify-content: center;
+      padding-right: 0;      
+    }
+
+   .burger-menu{
+    display: block;
+    transform: scale(0.6);
+  }
+  .button-container {
+    display: none;
+  }
+  .logo{
+   transform: scale(0.035); 
+   right: -530px;
+   }
+   .search-container{
+    margin-right: 0;
+   }
+   .text-field{
+    font-size: 1rem;
+    display: none;
+   }
+  .category-container {
+    display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 24px;
+    width: 100vw;
+    max-width: 100vw;
+    margin: 40px auto 0 auto;
   }
-  .category-card, .product-card, .benefit-card {
+  .category {
     width: 90vw;
-    max-width: 350px;
+    max-width: 400px;
+    min-width: 220px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
   }
+  .category img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+  }
+  .category-inside {
+    font-size: 2rem;
+    padding: 1rem;
+  }
+  .category button {
+    display: none;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.2rem;
+  }
+  .cta-button {
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+  }
+  .mobile-br { 
+    display: inline; 
+  }
+  .pc-br { 
+    display: none; 
+  }
+    .text-block {
+      font-size: 1.5rem;
+      padding: 6px 0.5rem;
+      height: auto;
+      white-space: normal;
+      text-align: center;
+    }
+    .mobile-text{
+      display: none;
+    }
+
+    .read-more {
+      position: sticky;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .read-more p{
+      position: relative;
+
+    }
 }

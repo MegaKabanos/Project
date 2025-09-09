@@ -752,7 +752,7 @@ input:focus{
 .newsletter-content p {
   font-size: 1.1rem;
   color: var(--text-color);
-  margin-bottom: 1.5rem;
+  margin: 0 1.5rem 1.5rem 1.5rem;
 }
 .subscribe-form {
   display: flex;
